@@ -21,7 +21,7 @@ typedef enum
  * @brief Function type declarations.
  */
 typedef cli_status_t (*cmd_func_ptr_t)(int argc, char **argv);
-typedef void (*println_func_ptr_t)(char *string);
+typedef int (*printf_func_ptr_t)(const char *format, ...);
 
 /*!
  * @brief Command structure, consisting of a name and function pointer.
@@ -37,7 +37,7 @@ typedef struct
  */
 typedef struct
 {    
-    println_func_ptr_t println; /* Function pointer to user defined println function.      */
+    printf_func_ptr_t printf; /* Function pointer to user defined println function.      */
     cmd_t *cmd_tbl;             /* Pointer to series of commands which are to be accepted. */
     size_t cmd_cnt;             /* Number of commands in cmd_tbl.                          */
 } cli_t;

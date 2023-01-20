@@ -163,5 +163,5 @@ static void cli_print(cli_t *cli, const char *msg)
     char buf[50];
 
     strcpy(buf, msg);
-    cli->println(buf);
+    cli->printf("%s\n", buf);
 }

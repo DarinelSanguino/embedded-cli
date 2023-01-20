@@ -49,7 +49,7 @@ void user_uart_println(char *string)
 
 cli_status_t help_func(int argc, char **argv)
 {
-    cli.println("HELP function executed");
+    cli.printf("HELP function executed");
     return CLI_OK;
 }
 
@@ -59,7 +59,7 @@ cli_status_t blink_func(int argc, char **argv)
     {
         if(strcmp(argv[1], "-help") == 0)
         {
-            cli.println("BLINK help menu");
+            cli.printf("BLINK help menu\n");
         }
         else
         {
@@ -68,7 +68,7 @@ cli_status_t blink_func(int argc, char **argv)
     }
     else
     {
-        cli.println("BLINK function executed");
+        cli.printf("BLINK function executed\n");
     }
     return CLI_OK;
 }
